@@ -1,8 +1,13 @@
-package proyecto_jpa.utilities;
+package covidjpa.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="mensaje")
@@ -12,11 +17,15 @@ public class Mensaje implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	
+	@Column(name="nombre")
 	private String nombre;
+	@Column(name="email")
 	private String email;
+	@Column(name="website")
 	private String website;
+	@Column(name="mensaje")
 	private String mensaje;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -48,5 +57,5 @@ public class Mensaje implements Serializable {
 		this.mensaje = mensaje;
 	}
 	
+	
 }
-
